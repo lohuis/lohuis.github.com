@@ -1,0 +1,156 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div id="container" style="height: 100%;width:100%"></div>
+
+<script>
+$(function() {
+    $('#container').highcharts({
+        chart: {
+            type: 'spline',
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Mantis'
+        },
+        tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+        xAxis: {
+            type: 'datetime',
+            plotBands: [{
+                from: Date.UTC(2014, 4, 27),
+                to: Date.UTC(2014, 4, 30),
+                color: '#FAFAFA',
+                label: {
+                    text: '4.6',
+                    style: {
+                        color: 'darkgrey'
+                    }
+                }
+            }, {
+                from: Date.UTC(2014, 4, 31),
+                to: Date.UTC(2014, 5, 5),
+                color: '#FFF',
+                label: {
+                    text: '4.7',
+                    style: {
+                        color: 'darkgrey'
+                    }
+                }
+            }, {
+                from: Date.UTC(2014, 5, 6),
+                to: Date.UTC(2014, 5, 17),
+                color: '#FAFAFA',
+                label: {
+                    text: '4.8',
+                    style: {
+                        color: 'darkgrey'
+                    }
+                }
+            }]
+
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            }
+        },
+        series: [{
+            name: 'Bugs',
+            pointInterval: 24 * 3600 * 1000,
+            pointStart: Date.UTC(2014, 4, 26),
+            data: [260,
+                266,
+                277,
+                277,
+                277,
+                277,
+                277,
+                273,
+                268,
+                267,
+                258,
+                260,
+                260,
+                260,
+                260,
+                268,
+                269,
+                260,
+                249,
+                249,
+                249,
+                240,
+                246
+            ]
+
+        }, {
+            name: 'Wensen',
+            pointInterval: 24 * 3600 * 1000,
+            pointStart: Date.UTC(2014, 4, 26),
+            data: [704,
+                707,
+                712,
+                712,
+                712,
+                712,
+                712,
+                711,
+                717,
+                717,
+                720,
+                710,
+                710,
+                710,
+                710,
+                709,
+                714,
+                715,
+                717,
+                717,
+                717,
+                717,
+                721
+            ]
+        }, {
+            name: 'Totaal',
+            pointInterval: 24 * 3600 * 1000,
+            pointStart: Date.UTC(2014, 4, 26),
+            data: [965,
+                974,
+                989,
+                989,
+                989,
+                989,
+                989,
+                985,
+                986,
+                984,
+                978,
+                970,
+                970,
+                970,
+                970,
+                977,
+                983,
+                975,
+                966,
+                966,
+                966,
+                957,
+                967
+            ]
+        }]
+    });
+});
+</script>
+</body></html>
